@@ -37,7 +37,7 @@ INTERVIEW-EXP-AGENT/
    ├─ bedrock_intent.py       # Intent classification via Bedrock (Claude)
    ├─ tavily_retrieval.py     # Tavily search + web scraping & cleaning
    ├─ analysis_engine.py      # RAG synthesis & EdgeCoach persona
-   ├─ requests/, certifi/, ...   # Vendored third-party dependencies
+   └─ requests/, certifi/, ...   # Vendored third-party dependencies
 ```
 
 You may also have additional packaging/metadata files such as `requirements.txt` or `README.md`.
