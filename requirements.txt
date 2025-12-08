@@ -1,0 +1,6 @@
+streamlit
+boto3
+requests
+trafilatura
+beautifulsoup4
+PyPDF2
