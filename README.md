@@ -1,4 +1,4 @@
-# EdgeCoach AI – A Retrieval-Augmented Interview Intelligence Assistant
+# EdgeCoach AI - A Retrieval Augmented Interview Intelligence Assistant
 
 EdgeCoach AI is a lightweight, serverless interview-intelligence assistant built for students who receive interview invitations with short notice and need **company- and role-specific** preparation quickly.
 
@@ -38,7 +38,6 @@ INTERVIEW-EXP-AGENT/
    ├─ tavily_retrieval.py     # Tavily search + web scraping & cleaning
    ├─ analysis_engine.py      # RAG synthesis & EdgeCoach persona
    ├─ requests/, certifi/, ...   # Vendored third-party dependencies
-   └─ venv/ (if present, not needed in the final zip)
 ```
 
 You may also have additional packaging/metadata files such as `requirements.txt` or `README.md`.
@@ -68,7 +67,7 @@ You may also have additional packaging/metadata files such as `requirements.txt`
 **Data & External Services**
 
 - **Tavily Search API** → web search over public interview content.  
-- **Public web sources** → Glassdoor, Reddit, blogs, PDFs, etc.  
+- **Public web sources** → Glassdoor, Reddit, Blogs, Linkedin PDFs, etc.  
 - **Amazon Bedrock (Claude)** → used for intent extraction and answer synthesis.
 
 ---
@@ -106,8 +105,9 @@ pip install -r requirements.txt
 
 Set the following environment variables before running locally:
 
-- `TAVILY_API_KEY` – API key for Tavily Search.  
-- `BEDROCK_INTENT_MODEL_ID` – optional override for the intent model (default: `anthropic.claude-3-haiku-20240307-v1:0`).  
+- `TAVILY_API_KEY` - API key for Tavily Search.  
+- `BEDROCK_INTENT_MODEL_ID` - optional override for the intent model (default: `anthropic.claude-3-haiku-20240307-v1:0`).
+- `BEDROCK_ANALYSIS_MODEL_ID` - optional override for the analysis model (default: `anthropic.claude-3-haiku-20240307-v1:0`).
 - AWS credentials configured via `aws configure` or environment variables so that `boto3` can call Bedrock.
 
 ---
