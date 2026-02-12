@@ -147,6 +147,12 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         # === INTERVIEW-INTEL FLOW (with Tavily) ===
         company = (latest_intent.get("company") or "").strip()
         role = (latest_intent.get("role") or "").strip()
+        
+        # FIX: Inherit context if intent is vague but continuation is implied
+        if latest_intent.get("wants_interview_intel") and not company and cached_state.get("company"):
+            company = cached_state["company"]
+            if not role:
+                 role = cached_state.get("role", "")
 
         sources = cached_state.get("sources") or []
         previous_company = cached_state.get("company", "")
